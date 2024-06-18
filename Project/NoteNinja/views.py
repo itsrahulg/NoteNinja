@@ -1,6 +1,28 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+
+
 # Create your views here.
 
 def homepage(request):
-    return HttpResponse("welcome to the homepage")
+    pass
+
+
+def viewnotes(request):
+    pass
+
+def createnote(request):
+    pass
+
+def updatenote(request):
+    pass
+
+def deletenote(request):
+    pass
+
+
+def register(request):
+    pass
+
+def login(request):
+    pass
+
