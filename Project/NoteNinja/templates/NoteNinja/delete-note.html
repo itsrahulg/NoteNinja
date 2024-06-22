@@ -22,7 +22,15 @@
 
 
 </head>
-<body>
+<body style="
+    background-image: url('/static/images/notes-bg.png');
+    background-size: cover; 
+    background-repeat: no-repeat;
+    height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;" >
 
     <div class="register container" style="height: 35%;">
 
@@ -33,9 +41,10 @@
        
             
             <br>
-            <button type="submit" class="btn btn-primary" style="width: 100%; margin-bottom: 5px;">Yes i want to delete it</button>
-
+            <button type="submit" class="btn btn-primary" style="width: 100%; margin-bottom: 15px;">Yes i want to delete it</button>
+            <br>
           </form>
+          <a href="{% url 'view-notes' %}" class="btn btn-primary" style="width: 100%; margin-bottom: 10px;">NO, go back</a>
 
           <br>
 

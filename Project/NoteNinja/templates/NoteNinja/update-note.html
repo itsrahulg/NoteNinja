@@ -24,7 +24,7 @@
 </head>
 <body>
 
-    <div class="register container" style="height: 80%;">
+    <div class="register container" style="height: 85%;">
 
         <form method="POST" autocomplete="off">
             {%csrf_token %}
@@ -48,7 +48,7 @@
             <button type="submit" class="btn btn-primary" style="width: 100%; margin-bottom: 5px;">UPDATE NOTE</button>
 
           </form>
-
+          <a href="{% url 'view-notes' %}" class="btn btn-primary" style="width: 100%; margin-bottom: 15px;">Go back</a>
           <br>
   
 

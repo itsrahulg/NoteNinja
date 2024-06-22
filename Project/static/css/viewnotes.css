@@ -18,16 +18,29 @@ body{
     justify-content: flex-start;
     align-self: flex-start;
     flex-wrap: wrap;
+    
 }
 
 .card{
-    height:300px;
-    max-width: 500px;
+    max-height:300px;
+    max-width: fit-content;
+    min-width: 300px;
     padding: 5px;
     margin: 10px;
 }
 
 
+
+.buttons{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    
+    
+}
+.btn{
+    margin-right: 10px;
+}
 
 
 
