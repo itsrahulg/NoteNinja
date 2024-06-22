@@ -8,6 +8,21 @@
 <body>
     <h1>this is the view notes page test</h1>
 
+    {% for notes in all_notes %}
+    <br>
+    {{notes.title}}
+    <br>
+    {{notes.description}}
+    <br>
+    <a href="{% url 'updatenote' notes.id %}">Update Note</a>
+    &nbsp;
+    <a href="{% url 'deletenote' notes.id %}">Delete Note</a>
+    {% endfor %}
+
+    <br>
+    <br>
+    <br>
+    <a href="{% url 'createnote' %}">Create Note</a>
     <a href="{% url 'logout' %}">Logout</a>
 </body>
 </html>

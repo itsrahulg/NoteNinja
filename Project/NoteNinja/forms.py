@@ -1,12 +1,19 @@
-from typing import Any
+from typing import Any, Mapping
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
 
 from django.contrib.auth.forms import AuthenticationForm
 
 from django import forms
-
+from django.core.files.base import File
+from django.db.models.base import Model
+from django.forms.utils import ErrorList
 from django.forms.widgets import PasswordInput, TextInput
+
+
+from django.forms import ModelForm
+from . models import createNote
+
 
 class CreateUserForm(UserCreationForm):
 
@@ -95,6 +102,41 @@ class LoginForm(AuthenticationForm):
     username = forms.CharField(widget=TextInput())
     password = forms.CharField(widget=PasswordInput())
     
+
+
+
+
+class CreateNoteForm(ModelForm):
+
+    def __init__(self, *args: Any, **kwargs: Any) -> None:
+        super().__init__(*args, **kwargs)
+        self.fields["title"].widget.attrs.update({
+            'required' : '',
+            'name' : 'title',
+            'id': 'title',
+            'type':'text',
+            'class' : 'form-control',
+            'placeholder' :'enter title here',
+            'maxlength' : '100',
+            'minlength' : '1'
+        })
+
+        self.fields["description"].widget.attrs.update({
+            'required' : '',
+            'name' : 'description',
+            'id': 'description',
+            'type':'text',
+            'class' : 'form-control',
+            'placeholder' :'Enter description here',
+            'maxlength' : '2000',
+            'minlength' : '1'
+        })
+
+
+    class Meta:
+        model = createNote
+        fields = ['title','description']
+
 
 
 

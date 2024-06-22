@@ -6,8 +6,8 @@ urlpatterns = [
     path('register',views.register,name="register"),
     path('login',views.login,name="login"),
     path('logout',views.logout,name="logout"),
-    path('createnote',views.createnote,name="creatnote"),
+    path('createnote',views.createnote,name="createnote"),
     path('viewnotes',views.viewnotes,name="view-notes"),
-    path('updatenotes',views.updatenote,name="updatenote"),
-    path('deletenote',views.deletenote,name="deletenote"),
+    path('updatenotes/<str:pk>',views.updatenote,name="updatenote"),
+    path('deletenote/<str:pk>',views.deletenote,name="deletenote"),
 ]
